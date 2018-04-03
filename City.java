@@ -9,15 +9,19 @@ public class City
 {
     //Number of routes connecting to the city
     //Number of meeples on the city w/ each color present
-    CityName name;
+    String name;
     int routes; //The number of paths off of this particular city
     int[] meeples = new int[6]; //This array hold each of the 6 colored meeples. Each time a meeple is add/subtracted, the
     //location of that specific color in the array is incremented or decremented 
-    public City(CityName name, int numRoutes){
+    public City(String name, int numRoutes){
         this.name = name;
         routes = numRoutes;
     }
-
+    
+    public City(String name){
+        this.name = name;
+    }
+    
     protected void addMeeple(MeepleColor meeple){
         switch(meeple){
             case RED: meeples[0] ++;
